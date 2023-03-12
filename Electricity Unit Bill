@@ -1,0 +1,67 @@
+#include <stdio.h>
+#include <math.h>
+
+int main()
+{
+    int units;
+    float total=0.0;
+    
+    printf("Enter the Number of Units:");
+    scanf("%d", &units);
+    
+    if(units<0)
+    {
+        printf("Invalid Input");
+        return 0;
+    }
+    
+    if(units>50)
+    {
+        total = total + 50*0.50;
+        units = units - 50;
+    }
+    else
+    {
+        total = total + units*0.50;
+        units=0;
+    }
+    
+    if(units>100)
+    {
+        total = total+ 100*0.75;
+        units = units - 100;
+    }
+    else
+    {
+        total = total+ units*0.75;
+        units=0;
+    }
+      
+
+    if(units>100)
+    {
+        total = total+ 100*1.20;
+        units = units - 100;
+    }
+    else
+    {
+        total = total+ units*1.20;
+        units=0;
+    }
+        
+    
+    if(units>0)
+    {
+        total = total+ units*1.50;
+        units=0;
+    }
+    
+    total = total + (total*20)/100;
+    
+    int result;
+    result = floor(total);
+    
+    printf("The Total Bill is: rs %d\n", result);    
+
+    return 0;
+}
