@@ -1,0 +1,68 @@
+//s1=silent
+//s2=listen
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    char S1[20];
+    char S2[20];
+    int j=0, arrA[26], arrB[26];
+    
+    scanf("%s , %s", S1, S2);
+    // scanf("%s", s2);
+    
+    char *s1 = malloc(sizeof(S1));
+    char *s2 = malloc(sizeof(S2));
+    
+    
+    for(int i=0; i<26; i++)
+    {
+        arrA[i]=0;
+        arrB[i]=0;
+    }
+    
+    if(sizeof(s1) != sizeof(s2))
+    {
+        printf("String length not equal!");
+        return 0;
+    }
+    
+    while(j<=sizeof(s1))
+    {
+        int alphbet= (int) s1[j] - 'a' + 1;
+        
+        arrA[alphbet]++;
+        
+        j++;
+    }
+    
+    j=0;
+    
+    // printf("%d", sizeof(s1));
+    
+    while(j<=sizeof(s1))
+    {
+        int alphbet= (int) s2[j]- 'a' + 1;
+        
+        arrB[alphbet]++;
+        
+        j++;
+    }
+    
+    for(int i=0; i<26; i++)
+    {
+        if(arrA[i]!=arrB[i])
+        {
+            printf("Strings does not contains equal character!");
+            
+            return 0;
+        }
+    }
+    
+    
+    printf("Strings contains equal character!");
+
+    return 0;
+}
