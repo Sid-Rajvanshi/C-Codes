@@ -50,18 +50,5 @@ int main()
     }
         
     
-    if(units>0)
-    {
-        total = total+ units*1.50;
-        units=0;
-    }
-    
-    total = total + (total*20)/100;
-    
-    int result;
-    result = floor(total);
-    
-    printf("The Total Bill is: rs %d\n", result);    
-
-    return 0;
+    // write code for unit 0;
 }
